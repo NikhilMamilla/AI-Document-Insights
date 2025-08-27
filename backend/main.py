@@ -9,10 +9,10 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from decouple import config
 
-from .database import get_db_connection, initialize_database
-from .models import DocumentItem, InsightsResponse, UploadResponse
-from .pdf_processor import extract_text_from_pdf
-from .ai_service import (
+from database import get_db_connection, initialize_database
+from models import DocumentItem, InsightsResponse, UploadResponse
+from pdf_processor import extract_text_from_pdf
+from ai_service import (
 	call_sarvam_ai_summary,
 	fallback_top_words,
 	generate_structured_report,

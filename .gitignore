@@ -43,6 +43,10 @@ env/
 backend/uploads/
 uploads/
 
+# Python cache
+__pycache__/
+*.pyc
+
 # IDE
 .vscode/
 .idea/
