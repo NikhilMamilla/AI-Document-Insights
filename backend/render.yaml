@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: ai-document-insights-backend
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: SARVAM_API_KEY
+        value: sk_s31uqtf7_G63rZ1YLhOKyhE8GKyi76xLQ
+      - key: ALLOWED_ORIGINS
+        value: https://ai-document-insights-2kg0014i0-nikhilmamillas-projects.vercel.app
+      - key: MAX_FILE_SIZE
+        value: 10485760
