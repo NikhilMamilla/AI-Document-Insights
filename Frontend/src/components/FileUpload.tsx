@@ -93,7 +93,7 @@ const FileUpload: React.FC<FileUploadProps> = ({ onUploadComplete, setIsLoading 
 
 	return (
 		<div className="space-y-4">
-			<div onDragEnter={handleDragEnter} onDragLeave={handleDragLeave} onDragOver={handleDragOver} onDrop={handleDrop} onClick={() => fileInputRef.current?.click()} className={`relative border-2 border-dashed rounded-xl p-8 text-center cursor-pointer transition-all duration-300 ${isDragOver ? 'border-blue-400 bg-blue-50/50 scale-[1.02]' : selectedFile ? 'border-green-400 bg-green-50/50' : 'border-gray-300 hover:border-blue-400 hover:bg-blue-50/30'}`}>
+			<div onDragEnter={handleDragEnter} onDragLeave={handleDragLeave} onDragOver={handleDragOver} onDrop={handleDrop} onClick={() => fileInputRef.current?.click()} className={`relative border-2 border-dashed rounded-xl p-6 sm:p-8 text-center cursor-pointer transition-all duration-300 ${isDragOver ? 'border-blue-400 bg-blue-50/50 scale-[1.02]' : selectedFile ? 'border-green-400 bg-green-50/50' : 'border-gray-300 hover:border-blue-400 hover:bg-blue-50/30'}`}>
 				<input ref={fileInputRef} type="file" accept=".pdf,application/pdf" onChange={handleInputChange} className="hidden" />
 				{selectedFile ? (
 					<div className="space-y-4">
@@ -152,7 +152,7 @@ const FileUpload: React.FC<FileUploadProps> = ({ onUploadComplete, setIsLoading 
 			)}
 
 			{selectedFile && !uploadProgress && (
-				<button onClick={handleUpload} disabled={!!error} className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 disabled:from-gray-400 disabled:to-gray-500 text-white font-medium py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-[1.02] disabled:scale-100 disabled:cursor-not-allowed shadow-lg hover:shadow-xl">
+				<button onClick={handleUpload} disabled={!!error} className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 disabled:from-gray-400 disabled:to-gray-500 text-white font-medium py-3 px-5 sm:px-6 rounded-lg transition-all duration-200 transform hover:scale-[1.02] disabled:scale-100 disabled:cursor-not-allowed shadow-lg hover:shadow-xl">
 					<div className="flex items-center justify-center space-x-2">
 						<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
 						<span>Analyze with AI</span>

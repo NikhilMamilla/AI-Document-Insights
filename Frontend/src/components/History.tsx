@@ -36,28 +36,28 @@ export default function History({ onDocumentSelect, refreshTrigger }: { onDocume
 				<h3 className="text-lg font-semibold text-gray-800">Uploads</h3>
 				<span className="text-xs text-gray-500">{total} total</span>
 			</div>
-			<div className="overflow-x-auto rounded-xl border border-gray-200 bg-white shadow-sm p-3">
+			<div className="overflow-x-auto rounded-xl border border-gray-200 bg-white shadow-sm p-2 sm:p-3">
 				<table className="min-w-full text-sm">
 					<thead className="bg-gray-50">
 						<tr>
-							<th className="px-4 py-3 text-left font-medium text-gray-600">Filename</th>
-							<th className="px-4 py-3 text-left font-medium text-gray-600">Uploaded</th>
-							<th className="px-4 py-3 text-left font-medium text-gray-600">Size</th>
+							<th className="px-3 sm:px-4 py-3 text-left font-medium text-gray-600">Filename</th>
+							<th className="px-3 sm:px-4 py-3 text-left font-medium text-gray-600">Uploaded</th>
+							<th className="px-3 sm:px-4 py-3 text-left font-medium text-gray-600">Size</th>
 							<th className="px-4 py-3"></th>
 						</tr>
 					</thead>
 					<tbody>
 						{items.map((d) => (
 							<tr key={d.id} className="odd:bg-white even:bg-gray-50">
-								<td className="px-4 py-3">
+								<td className="px-3 sm:px-4 py-3">
 									<div className="flex items-center gap-2">
 										<span className="inline-block h-2 w-2 rounded-full bg-green-500" />
-										<span className="font-medium text-gray-800">{d.filename}</span>
+										<span className="font-medium text-gray-800 truncate max-w-[160px] sm:max-w-none">{d.filename}</span>
 									</div>
 								</td>
-								<td className="px-4 py-3 text-gray-600">{new Date(d.upload_date).toLocaleString()}</td>
-								<td className="px-4 py-3 text-gray-600">{(d.file_size / 1024).toFixed(1)} KB</td>
-								<td className="px-4 py-3 text-right space-x-2">
+								<td className="px-3 sm:px-4 py-3 text-gray-600 whitespace-nowrap">{new Date(d.upload_date).toLocaleString()}</td>
+								<td className="px-3 sm:px-4 py-3 text-gray-600">{(d.file_size / 1024).toFixed(1)} KB</td>
+								<td className="px-3 sm:px-4 py-3 text-right space-x-1 sm:space-x-2">
 									<button className="rounded border px-2 py-1 text-xs hover:bg-gray-50" onClick={() => onDocumentSelect(d)}>View</button>
 									<button className="rounded border px-2 py-1 text-xs text-red-600 border-red-300 hover:bg-red-50" onClick={async () => { const ok = await deleteDocument(d.id); if (ok) { setItems((prev) => prev.filter((x) => x.id !== d.id)); setTotal((t) => Math.max(0, t - 1)) } }}>Delete</button>
 								</td>

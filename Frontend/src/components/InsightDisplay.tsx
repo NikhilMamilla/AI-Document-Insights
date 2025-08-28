@@ -28,9 +28,9 @@ export default function InsightDisplay({ document }: { document: DocumentUI }) {
 			</div>
 
 			{sections.length > 0 ? (
-				<div className="space-y-5">
+				<div className="space-y-4 sm:space-y-5">
 					{sections.map((s) => (
-						<section key={s.title} className="rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
+						<section key={s.title} className="rounded-xl border border-gray-100 bg-white p-3 sm:p-4 shadow-sm">
 							<h4 className="mb-2 text-sm font-semibold text-gray-800">{s.title}</h4>
 							{s.bullets.length > 0 ? (
 								<ul className="list-disc pl-5 text-sm text-gray-800 space-y-1">
