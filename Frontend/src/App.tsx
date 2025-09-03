@@ -135,7 +135,7 @@ const App: React.FC = () => {
 				)}
 			</main>
 
-			<footer className="mt-16 py-8 border-t border-white/20">
+			{/* <footer className="mt-16 py-8 border-t border-white/20">
 				<div className="max-w-6xl mx-auto px-4 text-center">
 					<p className="text-gray-600 text-sm">
 						Created by <span className="font-medium">Nikhil Mamilla</span> • 
@@ -143,7 +143,7 @@ const App: React.FC = () => {
 						Phone: <a className="hover:text-blue-600" href="tel:+917842070463">7842070463</a>
 					</p>
 				</div>
-			</footer>
+			</footer> */}
 		</div>
 	)
 }
